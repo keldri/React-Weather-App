@@ -1,6 +1,62 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Weather App
+[Built from Free Code Camp's:How to Build a Weather Application with React and React Hooks](https://www.freecodecamp.org/news/learn-react-by-building-a-weather-app/)
+
+# Data & APIs:
+### RapidAPI-GeoDBCities
+ [Cities Endpoint](https://rapidapi.com/wirefreethought/api/geodb-cities)
+
+### OpenWeatherMap.org
+[Current Weather Endpoint](https://openweathermap.org/current)
+ <br>
+
+[5 Day Weather Forcast Endpoint](https://openweathermap.org/forecast5)
+<br>
+<br>
+<br>
+# Components
+## Search Component
+The Search Component returns a select(AsyncPaginatecomponent)that allows the user to search for cities based on data pulled from the GEO API endpoint.
+
+The Search Component uses the useState hook to declare a state variable for `search` and initializes it's state as `null`.
+
+## CurrentWeather Component
+WIP
+
+## Forecast Component
+WIP
+<br>
+<br>
+<br>
+# Functions
+`handleOnChange()` (Search Component)
+<br>
+
+ This function passes the parameter `searchData` and sets the state of `search` to `searchData`. It also updates the data when `onSearchChange` prop passed from the App Component calls `handleOnSearchChange`  to log out the data value.
+<br>
+<br>
+<br>
+
+`loadOptions()` (Search Component)
+<br>
+
+This function uses async/await to enable asynchronous, promise-based behavior when the select `inputValue` is passed.  It fetches the cities from the GEO API endpoint using the `minPopulation` parameter to limit the population of cities searched and maps a successful response to JSON (city latitude,longitude, name, and countrycode) or catches an error and console.logs() the error.
+<br>
+<br>
+<br>
+
+`handleOnSearchChange()` (App Component)
+<br>
+This function is called from the parent component App and takes in `searchData` which is longitude, latitude, and city name are grabbed from GeoDBCities API cities endpoint in the `Search Component` when user inputs a value.
+<br>
+
+It fetches the current weather from OpenWeatherMap API's current weather endpoint and forecast from forecast endpoint and sends the desired response.
+
+These responses are captured and shared with CurrentWeather Component and Forecast Component via props and the response is output in both of these components.
+
+# Getting Started with Create React App
+(https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App]
 
 ## Available Scripts
 
